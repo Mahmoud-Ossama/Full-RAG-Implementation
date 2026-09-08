@@ -1,0 +1,17 @@
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+class Settings(BaseSettings):
+    
+    APP_NAME: str
+    APP_VERSION: str
+    OPENAI_API_KEY: str
+    
+    FILE_MAX_SIZE: int
+    FILE_ALLOWED_EXTENSIONS: list[str]
+    FILE_CHUNK_SIZE: int
+    
+    model_config = SettingsConfigDict(env_file=".env")
+        
+
+def get_settings():
+    return Settings()
