@@ -10,6 +10,9 @@ class Settings(BaseSettings):
     FILE_ALLOWED_EXTENSIONS: list[str]
     FILE_CHUNK_SIZE: int
     
+    MONGODB_URL: str
+    MONGODB_DATABASE: str
+    
     model_config = SettingsConfigDict(env_file=".env")
         
 
